@@ -1,0 +1,24 @@
+const section = document.querySelector(".elements");
+let elements = ["javascript", "laravel", "mongo", "nodejs", "php", "react"];
+elements = [...elements, ...elements];
+elements.sort(() => Math.random() - 0.5);
+elements.forEach((a) => {
+  let img = document.createElement("img");
+  img.setAttribute("src", `images/${a}.png`);
+  let back_img = document.createElement("img");
+  back_img.setAttribute("src", `images/back.jpg`);
+  let card = document.createElement("div");
+  card.classList.add("card");
+  let card__inner = document.createElement("div");
+  card__inner.classList.add("card__inner");
+  let front = document.createElement("div");
+  front.classList.add("front");
+  let back = document.createElement("div");
+  back.classList.add("back");
+  back.append(back_img);
+  back.classList.add("back");
+  front.append(img);
+  card__inner.append(front, back);
+  card.append(card__inner);
+  section.append(card);
+});

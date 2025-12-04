@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-color: teal;
+}
+.elements {
+  width: 600px;
+  height: 400px;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.elements img {
+  width: 100%;
+  border: 1px solid;
+}
+.card__inner {
+  position: relative;
+  height: 100%;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.card {
+  border: 1px solid red;
+}
+.card__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.back {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
