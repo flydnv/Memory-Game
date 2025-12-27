@@ -9,8 +9,8 @@ body {
   background-color: teal;
 }
 .elements {
-  width: 600px;
-  height: 400px;
+  width: 1000px;
+  height: 450px;
   margin: 10px auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -22,7 +22,7 @@ body {
 .card__inner {
   position: relative;
   height: 100%;
-  transition: 0.5s;
+  transition: 1s;
   transform-style: preserve-3d;
 }
 .front,
@@ -39,12 +39,28 @@ body {
 .card__inner img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .back {
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
   backface-visibility: hidden;
+  transition: 1s;
 }
-.card:hover .card__inner {
+
+/* .card:hover .card__inner {
   transform: rotateY(180deg);
+} */
+.active .card__inner {
+  transform: rotateY(180deg);
+}
+.active2 .card__inner {
+  transform: rotateY(180deg);
+}
+
+.score_table {
+  width: 100%;
+  height: 100px;
+  background-color: turquoise;
+  text-align: center;
+  font-size: 45px;
 }
